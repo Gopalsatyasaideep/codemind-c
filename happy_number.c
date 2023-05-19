@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int check(int n)
+int ssd(int n)
 {
     int r,s=0;
     while(n>0)
@@ -8,19 +8,18 @@ int check(int n)
         r=n%10;
         s=s+(r*r);
         n=n/10;
-        
     }
     return s;
 }
 int main()
 {
-    int n;
+    int n,s;
     scanf("%d",&n);
-    int r,s;
     do
     {
-        s=check(n);
+        s=ssd(n);
         n=s;
+        
     }while(n>9);
     if(n==1||n==7)
     {
@@ -30,5 +29,4 @@ int main()
     {
         printf("False");
     }
-    
 }

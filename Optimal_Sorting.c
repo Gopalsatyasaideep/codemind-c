@@ -1,43 +1,40 @@
 #include<stdio.h>
 int main()
 {
-    int te;
-    scanf("%d",&te);
-    for(int j=1;j<=te;j++)
+    int t,k;
+    scanf("%d",&t);
+    for(k=0;k<t;k++)
     {
-        int n;
-        scanf("%d",&n);
-        int x[n];
-        for(int i=0;i<n;i++)
+        int a;
+        scanf("%d",&a);
+        int arr[a];
+        for(int i=0;i<a;i++)
+        scanf("%d",&arr[i]);
+    
+    int x=0,s=0,c=0;
+    for(int i=0;i<a;i++)
+    {
+        for(int j=i+1;j<a;j++)
         {
-            scanf("%d",&x[i]);
-            
-        }
-        int t,s=0,c=0;
-        for(int i=0;i<n;i++)
-        {
-            for(int j=i+1;j<n;j++)
+            if(arr[i]>arr[j])
             {
-                if(x[i]>x[j])
-                {
-                    t=x[i];
-                    x[i]=x[j];
-                    x[j]=t;
-                    c++;
-                }
+                x=arr[i];
+                arr[i]=arr[j];
+                arr[j]=x;
+                c++;
             }
-            
         }
-        if(c==0)
-        {
-            printf("0
+    }
+    if(c==0)
+    {
+        printf("0
 ");
-        }
-        else
-        {
-            s=x[n-1]-x[0];
-            printf("%d
+    }
+    else
+    {
+        s=arr[a-1]-arr[0];
+        printf("%d
 ",s);
-        }
+    }
     }
 }

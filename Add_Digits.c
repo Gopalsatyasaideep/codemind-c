@@ -1,20 +1,26 @@
 #include<stdio.h>
+int sod(int n)
+{
+    int s=0,r;
+    while(n>0)
+    {
+        r=n%10;
+        s=s+r;
+        n=n/10;
+    }
+    return s;
+}
 
 int main()
 {
     int n;
     scanf("%d",&n);
-    int s=0;
-    while(n>0||s>10)
+    int r,t;
+    t=sod(n);
+    while(t>9)
     {
-        if(n==0)
-        {
-            n = s;
-            s =0;
-        }
-        int r = n%10;
-        s+=r;
-        n = n/10;
+        r=sod(t);
+        t=r;
     }
-    printf("%d",s);
+    printf("%d",t);
 }

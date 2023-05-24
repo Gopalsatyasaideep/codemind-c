@@ -8,12 +8,14 @@ int main()
     {
         for(int j=1;j<=n;j++)
         {
-            if(j==1||i==j||j==n)
+            if(j==i||j+i==n+1)
             {
-                printf("* ");
+                printf("x");
             }
             else
-            printf("  ");
+            {
+                printf("0");
+            }
         }
         printf("
 ");

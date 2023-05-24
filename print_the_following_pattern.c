@@ -6,16 +6,14 @@ int main()
     scanf("%d",&n);
     for(int i=1;i<=n;i++)
     {
-        for(int j=1;j<=i;j++)
+        for(int j=1;j<=n;j++)
         {
-            if(j==1||j==i||i==n)
+            if(j==1||i==j||j==n)
             {
-                printf("*");
+                printf("* ");
             }
             else
-            {
-                printf(" ");
-            }
+            printf("  ");
         }
         printf("
 ");

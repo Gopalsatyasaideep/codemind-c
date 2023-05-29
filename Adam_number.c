@@ -1,26 +1,35 @@
-#include<stdio.h>
-
+#include <stdio.h>
+int sq(int n)
+{
+    int s=n*n;
+    return s;
+}
 int rev(int n)
 {
-    int r=0;
-    while(n>0)
+    int r,s=0;
+    while(n!=0)
     {
-        r=r*10+n%10;
-        n=n/10;
+    r=n%10;
+    s=(s*10)+r;
+    n=n/10;
     }
-    return r;
+    return s;
 }
 int main()
 {
-    int n;
+    int n,r,p,o,ans;
     scanf("%d",&n);
-    int r=rev(n);
-    int p1=n*n;
-    int p2=r*r;
-    if(rev(p2)==p1)
+    r=sq(n);
+    p=rev(n);
+    o=sq(p);
+    ans=rev(o);
+    if(r==ans)
     {
         printf("True");
     }
     else
-    printf("False");
+    {
+        printf("False");
+    }
+    
 }
